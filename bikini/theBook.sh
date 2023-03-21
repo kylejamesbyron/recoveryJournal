@@ -14,13 +14,15 @@ echo "4. Ready Entry"
 
 read option
 
-if $option=1
+echo $option
+
+if [ $option = 1 ]
 then
-echo "Read Journal"
+	echo "Read Journal"
+elif [ $option = 2 ]
+then
+	touch $dateFormat.txt
+	echo $(date) >> $dateFormat.txt
+	nano $dateFormat.txt
+
 fi
-
-touch $dateFormat.txt
-
-echo $(date) >> $dateFormat.txt
-
-nano $dateFormat.txt
