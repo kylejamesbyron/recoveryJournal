@@ -1,42 +1,12 @@
 #!/bin/bash
 # A script to determine your sober date.
 
-#now=$(date +%s)
-#echo $now
+echo "How many days have you been sober?"
 
-#past=$(date +%s --date "1999-12-28")
-#echo $past
+read startSober
 
-#difference=$(($now-$past))
-#echo $difference
+daysSober=(($startSober + 1))
 
-#seconds=$(($difference/(3600*24)))
-#echo $seconds
+echo $daysSober
 
-#echo $(($seconds/364))
-
-#example
-#let DIFF=($(date +%s -d 20210131)-$(date +%s -d 20210101))/86400
-#echo $DIFF
-
-
-#new way of doing.
-echo "What year did you become sober?"
-read yearSober
-
-year=$(date +%y)
-
-fullYear=20$year
-
-echo $fullYear
-echo $year
-
-soberYear=($fullYear) - ($year)
-echo $soberYear
-
-echo "What month did you become sober?"
-
-DIFF=$(date +%y)
-
-echo "$DIFF"
 
