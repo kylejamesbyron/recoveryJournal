@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ ! -d "/rjp" ]
+#Make main folder.
+
+if [ -d "/rjp" ]
 
 then
 
@@ -13,5 +15,6 @@ cd rjp
 
 fi
 
+# Check if program data folder exists
 
-mkdir data
+# Learn, Learn, Learn
