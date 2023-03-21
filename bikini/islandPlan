@@ -1,9 +1,20 @@
-Day's Sober
-Weather (zip code)
-AA Attendance
-Meetings in your area.
-Daily Grattitude
-Health
-Amends
-Resentments
-Journal
+GENERATE
+  Day's Sober
+  AA Attendance
+  Health
+  
+FETCH
+  Weather (zip code)
+  Meetings in your area.
+  Daily Grattitude
+  
+JOURNAL
+  Amends
+  Resentments
+  Journal
+  
+PREFETCH
+  Coping skills
+  Quotes
+  Stepwork
+  Graphics
