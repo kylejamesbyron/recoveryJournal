@@ -2,6 +2,7 @@ GENERATE
   Day's Sober
   AA Attendance
   Health
+  Journal run
   
 FETCH
   Weather (zip code)
