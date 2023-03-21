@@ -24,6 +24,16 @@
 echo "What year did you become sober?"
 read yearSober
 
+year=$(date +%y)
+
+fullYear=20$year
+
+echo $fullYear
+echo $year
+
+soberYear=($fullYear) - ($year)
+echo $soberYear
+
 echo "What month did you become sober?"
 
 DIFF=$(date +%y)
