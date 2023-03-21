@@ -1,6 +1,6 @@
 #!/bin/bash
  
-DATABASE_FILE=dab.csv
+DATABASE_FILE=test.csv
  
 function db_clear() {
   rm -f "$DATABASE_FILE"
@@ -28,7 +28,10 @@ db_set key key2
 # key=key2
 echo key=$(db_get key)
  
-db_set name helloacm
+echo "What is your name?"
+
+read name 
+db_set name $name
 db_set age 20
  
 # name=helloacm

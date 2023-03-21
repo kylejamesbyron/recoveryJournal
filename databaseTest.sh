@@ -38,11 +38,7 @@ echo age=$(db_get age)
 # 404=
 echo 404=$(db_get 404)
  
-echo DATBASE contents
-# key,key1
-# key,key2
-# name,helloacm 
-# age,20
+
 
 echo "Testing here"
 db_set maisom Mark
@@ -50,5 +46,10 @@ echo maisom=$(db_get maisom)
 
 echo "This is $(db_get maisom)"
 
+#echo DATBASE contents
+# key,key1
+# key,key2
+# name,helloacm 
+# age,20
 # The following displays the whole Database.
 #cat "$DATABASE_FILE"
