@@ -4,7 +4,7 @@
 
 #Initial Create
 
-mkdir recoveryjournal/userFolders
+mkdir userFolders
 #Should we create database here -!?
 
 #Collect information
@@ -15,7 +15,7 @@ read firstName
 echo "What is your last name?"
 read lastName
 
-echo "Please choos a username?"
+echo "Please choose a username?"
 read userName
 
 echo "Please enter your sober date as mm/dd/yyyy."
@@ -24,8 +24,8 @@ read soberDate
 #Create user folders.
 
 cd userFolders
-mkdir $ userName
-cd $ userName
+mkdir $userName
+cd $userName
 touch database
 mkdir quotes
 mkdir internetContent
