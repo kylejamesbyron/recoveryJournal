@@ -1,4 +1,4 @@
-#!/bin/bashd
+#!/bin/bash
 
 #This is the testing ground for RJP initial setup script.
 
@@ -24,8 +24,8 @@ read soberDate
 #Create user folders.
 
 cd userFolders
-mkdir userName
-cd userName
+mkdir $ userName
+cd $ userName
 touch database
 mkdir quotes
 mkdir internetContent
