@@ -5,7 +5,7 @@ echo "How many days have you been sober?"
 
 read startSober
 
-daysSober=(($startSober + 1))
+daysSober=$(($startSober+1))
 
 echo $daysSober
 
