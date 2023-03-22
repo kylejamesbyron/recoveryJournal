@@ -4,7 +4,9 @@
 
 echo "Welcome to the Recovery Journal.  This file will setup the Recovery Journal environment as well as collecting some information about you."
 
-sleep 5s
+sleep 1s
+
+#Collecting info for database.
 
 echo "Lets get started!"
 
@@ -21,6 +23,19 @@ echo "Please enter your sober date in the format YYYY-MM-DD so we can help you k
 read soberDate
 
 echo "That is all we need for now.  One moment while we setup the program.  We  will be ready for your first entry shortly."
+
+#Lets collect a simple password to implement a simple password check later.
+
+echo "What would you like your password to be?"
+
+read password
+
+#create the Recovery Journal folder
+mkdir TheRecoveryJournal
+cd TheRecoveryJournal
+mkdir Data
+
+# Create database file.
 
 touch $lastName.$firstName.csv
 
@@ -44,6 +59,13 @@ function db_remove() {
 
 # db_clear
 
+# Now we add to the database
+db_set firstName $firstName
 db_set lastName $lastName
+db_set soberDate $soberDate
+db_set password $password
 
-echo name=$(db_get lastName)
+
+echo firstName=$(db_get firstName)
+echo lastName=$(db_get lastName)
+echo soberDate-$(db_get soberDate)
