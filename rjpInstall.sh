@@ -1,20 +1,25 @@
 #!/bin/bash
 
-#Make main folder.
+#A Script to setup Recovery Journal.
 
-if [ -d "/rjp" ]
+echo "Welcome to the Recovery Journal.  This file will setup the Recovery Journal environment as well as collecting some information about you."
 
-then
+sleep 5s
 
-echo "Recovery Journal Folder Exists"
+echo "Lets get started!"
 
-else
+echo "Please enter your first name."
 
-	mkdir rjp
-cd rjp
+read firstName
 
-fi
+echo "Please enter your last name."
 
-# Check if program data folder exists
+read lastName
 
-# Learn, Learn, Learn
+echo "Please enter your sober date in the format YYYY-MM-DD so we can help you keep track of day's sober."
+
+read soberDate
+
+echo "That is all we need for now.  One moment while we setup the program.  We  will be ready for your first entry shortly."
+
+
