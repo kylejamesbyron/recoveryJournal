@@ -80,7 +80,7 @@ echo "Please enter your password:"
 read password
 
 # if password is correct then proceed. -function
-mainMenu()
+mainMenu
 
 
 clear
