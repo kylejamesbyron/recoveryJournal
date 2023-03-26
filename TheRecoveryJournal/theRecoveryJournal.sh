@@ -49,8 +49,7 @@ function mainMenu() {
         echo "2. New Entry"
         echo "3. List Entries"
         echo "4. Read Specific Entry"
-        echo "5. Read Journal"
-        echo "6. Exit"
+        echo "5. Exit"
         echo "Please input number of your choice:"
 
         read option
@@ -72,11 +71,8 @@ function mainMenu() {
                 ls
         elif [ $option = 4 ]
         then
-                echo "Read Entry"
-        elif [ $option = 5 ]
-        then
                 echo "Read Journal"
-        elif [ $option = 6 ]
+        elif [ $option = 5 ]
         then
                 exit
         fi
