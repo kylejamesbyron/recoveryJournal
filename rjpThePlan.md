@@ -36,4 +36,4 @@
 [X] document and move echos
 [X] Add Exit Command
 [ ] simplify path to data file
-[ ] Fix double read in menu 
+[X] Fix double read in menu 
