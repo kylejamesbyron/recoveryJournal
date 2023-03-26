@@ -27,3 +27,10 @@
 # TODO
 [ ] simple password
 [ ] encryption
+[X] Add database functions
+[ ] function to calculate days sober
+[ ] move journals to data file.
+[ ] write journals in markup
+[ ] make main menu a function
+[ ] spell check
+[ ] document and move echos
