@@ -33,6 +33,13 @@ sleep 1s
 
 clear
 
+echo "Did you stay sober today?"
+read soberToday
+
+# write  if then for soberToday.
+
+clear
+
 echo "Welcome to Recovery Journal $firstName!"
 
 # Need a function to calculate days since sober date.
