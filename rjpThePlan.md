@@ -1,15 +1,15 @@
 # The Recovery Journal
 
 ## GENERATE
-[ ] Day's Sober
-    *[ ] Were you sober today?*
-[ ] AA Attendance
-[ ] Health
-[ ] Journal run
+- [ ] Day's Sober
+    - *[ ] Were you sober today?*
+- [ ] AA Attendance
+- [ ] Health
+- [ ] Journal run
   
 ## FETCH
-[ ] Weather (zip code)
-[ ] Meetings in your area.
+- [ ] Weather (zip code)
+- [ ] Meetings in your area.
 [ ] Daily Grattitude
   
 ## JOURNAL
