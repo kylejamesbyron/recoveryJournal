@@ -82,7 +82,6 @@ read password
 # if password is correct then proceed. -function
 mainMenu()
 
-sleep 1s
 
 clear
 
