@@ -37,3 +37,6 @@
 [X] Add Exit Command
 [ ] simplify path to data file
 [ ] Fix double read in menu 
+[ ] check if still sober
+[] check if user exists then launch setup
+[] create start script with installer
