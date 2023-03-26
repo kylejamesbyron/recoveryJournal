@@ -22,7 +22,7 @@ read firstName
 echo "What is your last name?"
 read lastName
 
-DATABASE_FILE=$lastName.$firstName.csv
+DATABASE_FILE=~/Documents/GitHub/recoveryJournal/TheRecoveryJournal/Data/$lastName.$firstName.csv
 
 function db_clear() {
   rm -f "$DATABASE_FILE"
@@ -41,7 +41,7 @@ function db_remove() {
 }
 
 function mainMenu() {
-        echo "Congratulations on $daysSober sober!"
+        echo "Sober since $(db_get soberDate)!"
 
         sleep 1s
 
@@ -50,7 +50,9 @@ function mainMenu() {
         echo "3. List Entries"
         echo "4. Read Specific Entry"
         echo "5. Read Journal"
+        echo "6. Exit"
         echo "Please input number of your choice:"
+
         read option
         sleep 2s
         clear
@@ -71,23 +73,31 @@ function mainMenu() {
         elif [ $option = 4 ]
         then
                 echo "Read Entry"
+        elif [ $option = 5 ]
+        then
+                echo "Read Journal"
+        elif [ $option = 6 ]
+        then
+                exit
         fi
-
+        sleep 2s
         clear
+
+        mainMenu
 }
 
 echo "Please enter your password:"
 read password
 
 # if password is correct then proceed. -function
-mainMenu
-
 
 clear
 
 echo "Welcome to Recovery Journal $firstName!"
 
 # Need a function to calculate days since sober date.
+
+mainMenu
 
 
 

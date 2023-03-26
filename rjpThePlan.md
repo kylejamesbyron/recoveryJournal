@@ -31,6 +31,9 @@
 [ ] function to calculate days sober
 [ ] move journals to data file.
 [ ] write journals in markup
-[ ] make main menu a function
+[X] make main menu a function
 [ ] spell check
-[ ] document and move echos
+[X] document and move echos
+[X] Add Exit Command
+[ ] simplify path to data file
+[ ] Fix double read in menu 
