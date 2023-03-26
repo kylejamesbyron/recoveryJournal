@@ -10,23 +10,23 @@
 ## FETCH
 - [ ] Weather (zip code)
 - [ ] Meetings in your area.
-[ ] Daily Grattitude
+- [ ] Daily Grattitude
   
 ## JOURNAL
-[ ] Amends
-[ ] Resentments
-[ ] Journal
+- [ ] Amends
+- [ ] Resentments
+- [ ] Journal
   
 ## PREFETCH
- [ ] Coping skills
- [ ] Quotes
- [ ] Stepwork
- [ ] Graphics
+ - [ ] Coping skills
+ - [ ] Quotes
+ - [ ] Stepwork
+ - [ ] Graphics
 
 
 # TODO
-[ ] simple password
-[ ] encryption
+- [ ] simple password
+- [ ] encryption
 [X] Add database functions
 [ ] function to calculate days sober
 [ ] move journals to data file.
