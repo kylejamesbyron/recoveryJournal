@@ -10,7 +10,7 @@ echo "Welcome to The Recovery Journal."
 
 sleep 1s
 
-echo "A program for the Recoverying addict."
+echo "A program for the Recovering addict."
 
 sleep 1s
 
@@ -42,6 +42,8 @@ function db_remove() {
 }
 
 function mainMenu() {
+        clear
+        echo "Welcome to The Recovery Journal."
         echo "Sober since $(db_get soberDate)!"
 
         sleep 1s
@@ -92,14 +94,26 @@ then
         echo "Welcome to Recovery Journal $firstName!"
 else    
         echo "Wrong Password!"
+        #Need to add wrong password action
 
 fi
 
 # clear
 
 
-echo "Did you stay sober today?"
+echo "Did you stay sober today? (Y/N)"
 read soberToday
+
+if [ $soberToday = "Y" ]
+then 
+        echo "Congratulations!"
+        sleep 1s
+        clear
+elif [ $soberToday = "N" ]
+then    
+        echo "That's okay!  Stay sober today."
+        # script to change soberdate
+fi
 
 # write  if then for soberToday.
 
