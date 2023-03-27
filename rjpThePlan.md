@@ -40,4 +40,5 @@
 - [ ] check if still sober
 - [ ] check if user exists then launch setup
 - [ ] create start script with installer
+- [ ] Change Date format
 
