@@ -90,11 +90,14 @@ read password
 if [ $password = $(db_get password) ]
 then
         echo "Welcome to Recovery Journal $firstName!"
-elif    
+else    
         echo "Wrong Password!"
+
+fi
+
 # clear
 
-<<<<<<< HEAD
+
 echo "Did you stay sober today?"
 read soberToday
 
@@ -103,10 +106,10 @@ read soberToday
 clear
 
 echo "Welcome to Recovery Journal $firstName!"
-=======
+
 # Just for testing:
 echo "Password is $(db_get password)"
->>>>>>> b1ac93e645a3789734477313e2b6bae48b9d19cd
+
 
 # Need a function to calculate days since sober date.
 
