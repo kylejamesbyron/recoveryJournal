@@ -22,6 +22,7 @@ read firstName
 echo "What is your last name?"
 read lastName
 
+# Define Database location
 DATABASE_FILE=~/Documents/GitHub/recoveryJournal/TheRecoveryJournal/Data/$lastName.$firstName.csv
 
 function db_clear() {
@@ -86,10 +87,15 @@ echo "Please enter your password:"
 read password
 
 # if password is correct then proceed. -function
+if [ $password = $(db_get password) ]
+then
+        echo "Welcome to Recovery Journal $firstName!"
+elif    
+        echo "Wrong Password!"
+# clear
 
-clear
-
-echo "Welcome to Recovery Journal $firstName!"
+# Just for testing:
+echo "Password is $(db_get password)"
 
 # Need a function to calculate days since sober date.
 
