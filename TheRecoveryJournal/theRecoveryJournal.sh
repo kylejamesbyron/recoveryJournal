@@ -22,7 +22,8 @@ read firstName
 echo "What is your last name?"
 read lastName
 
-DATABASE_FILE=$lastName.$firstName.csv
+# Define Database location
+DATABASE_FILE=~/Documents/GitHub/recoveryJournal/TheRecoveryJournal/Data/$lastName.$firstName.csv
 
 function db_clear() {
   rm -f "$DATABASE_FILE"
@@ -41,7 +42,7 @@ function db_remove() {
 }
 
 function mainMenu() {
-        echo "Congratulations on $daysSober sober!"
+        echo "Sober since $(db_get soberDate)!"
 
         sleep 1s
 
@@ -49,8 +50,9 @@ function mainMenu() {
         echo "2. New Entry"
         echo "3. List Entries"
         echo "4. Read Specific Entry"
-        echo "5. Read Journal"
+        echo "5. Exit"
         echo "Please input number of your choice:"
+
         read option
         sleep 2s
         clear
@@ -70,21 +72,29 @@ function mainMenu() {
                 ls
         elif [ $option = 4 ]
         then
-                echo "Read Entry"
+                echo "Read Journal"
+        elif [ $option = 5 ]
+        then
+                exit
         fi
-
+        sleep 2s
         clear
+
+        mainMenu
 }
 
 echo "Please enter your password:"
 read password
 
 # if password is correct then proceed. -function
-mainMenu
+if [ $password = $(db_get password) ]
+then
+        echo "Welcome to Recovery Journal $firstName!"
+elif    
+        echo "Wrong Password!"
+# clear
 
-
-clear
-
+<<<<<<< HEAD
 echo "Did you stay sober today?"
 read soberToday
 
@@ -93,8 +103,14 @@ read soberToday
 clear
 
 echo "Welcome to Recovery Journal $firstName!"
+=======
+# Just for testing:
+echo "Password is $(db_get password)"
+>>>>>>> b1ac93e645a3789734477313e2b6bae48b9d19cd
 
 # Need a function to calculate days since sober date.
+
+mainMenu
 
 
 
