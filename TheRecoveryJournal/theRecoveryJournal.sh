@@ -44,6 +44,9 @@ function db_remove() {
 }
 
 function mainMenu() {
+
+        journalFolder = ~/Documents/GitHub/recoveryJournal/TheRecoveryJournal/Data/$lastName.$firstName/
+        cd $journalFolder
         clear
         echo "Welcome to The Recovery Journal."
         echo "Sober since $(db_get soberDate)!"
