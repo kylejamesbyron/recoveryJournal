@@ -5,6 +5,7 @@
 dateFormat=$(date +%F)
 
 #Welcome Screen
+clear
 
 echo "Welcome to The Recovery Journal."
 
@@ -18,9 +19,10 @@ echo "First lets login."
 
 echo "What is your first name?"
 read firstName
-
+clear
 echo "What is your last name?"
 read lastName
+clear
 
 # Define Database location
 DATABASE_FILE=~/Documents/GitHub/recoveryJournal/TheRecoveryJournal/Data/$lastName.$firstName.csv
