@@ -99,7 +99,9 @@ then
         echo "Welcome to Recovery Journal $firstName!"
 else    
         echo "Wrong Password!"
-        #Need to add wrong password action
+        sleep 5s
+        exit
+        
 
 fi
 
