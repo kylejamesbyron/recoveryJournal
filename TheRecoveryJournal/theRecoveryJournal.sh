@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # A program for the Recovering Addict.
+# Stripped down version 23.04
 
 dateFormat=$(date +%F)
 
@@ -53,34 +54,23 @@ function mainMenu() {
 
         sleep 1s
 
-        echo "1. Read Journal"
-        echo "2. New Entry"
-        echo "3. List Entries"
-        echo "4. Read Specific Entry"
-        echo "5. Exit"
+        echo "1. New Entry"
+        echo "2. Exit"
         echo "Please input number of your choice:"
 
         read option
         sleep 2s
         clear
 
-        if [ $option = 1 ]
-        then
-                echo "Read Journal"
-        elif [ $option = 2 ]
+  
+        elif [ $option = 1 ]
         then
                 echo "New Entry"
-                touch $dateFormat.txt
-                echo $(date) >> $dateFormat.txt
-                nano $dateFormat.txt
-        elif [ $option = 3 ]
-        then
-                echo "List entries."
-                ls
-        elif [ $option = 4 ]
-        then
-                echo "Read Journal"
-        elif [ $option = 5 ]
+                echo "" >> $journal.txt
+                echo $(date) >> $journal.txt
+                echo "" >> $journal.txt
+                nano $journal.txt
+        elif [ $option = 2 ]
         then
                 exit
         fi
