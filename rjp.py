@@ -8,13 +8,38 @@ import os
 
 app = Flask(__name__)
 
-# End of Opening
+# End of opening
 
+# setup sqlite
+import sqlite3
+connection = sqlite3.connect("girls.db")
+cursor = connection.cursor()
+
+# end sqlite setup
+
+#<Write Setup
+
+# Login page
+@app.route('/login')
+def login():
+	return render_template('login.html')
+# login.html takes input (username, password)
+
+@app.route('/login/check')
+	def logincheck():
+#		load database
+#		pull variables for username and password
+#		if username and password = correct
+#			redirect to '/sobercheck'
+#		else:
+#			redirect to '/login/check/wrong'
+# end Login
+
+#Main Page
 @app.route('/')
-def appname():
-
-	return render_template('name.html')
-
+def main():
+	return render_template('main.html')
+# main.html
 
 
 
