@@ -83,11 +83,12 @@ def displayjournal():
 
 @app.route('/list')
 def list():
+	username=session.get('user')
    con = sqlite3.connect("rjp.db")
    con.row_factory = sqlite3.Row
   
    cur = con.cursor()
-   cur.execute("SELECT * FROM entries")
+   cur.execute("SELECT * FROM entries WHERE username = ?", [username])
   
    rows = cur.fetchall();
    return render_template("list.html",rows = rows)
