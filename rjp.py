@@ -72,9 +72,9 @@ def displayjournal():
 	cursor = connection.cursor()
 	selection = cursor.execute('SELECT entrydate, entry from entries WHERE username = ?', [username])
 	for row in selection:
-		entryday = (row[0])
+		entrydate = (row[0])
 		entry = (row[1])
-	return render_template('displayjournal.html', entryday=entryday, entry=entry)
+	return render_template('displayjournal.html', entrydate=entrydate, entry=entry)
 
 
 
