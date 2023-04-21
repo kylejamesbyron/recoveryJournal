@@ -76,22 +76,17 @@ def displayjournal():
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
 	rows = cursor.execute('SELECT * from entries WHERE username = ?', [username]).fetchall()
-#	for row in selection:
-#		entrydate = (row[0])
-#		entry = (row[1])
 	return render_template('displayjournal.html', rows=rows)
 
 @app.route('/list')
 def list():
 	username=session.get('user')
-   con = sqlite3.connect("rjp.db")
-   con.row_factory = sqlite3.Row
-  
-   cur = con.cursor()
-   cur.execute("SELECT * FROM entries WHERE username = ?", [username])
-  
-   rows = cur.fetchall();
-   return render_template("list.html",rows = rows)
+	con = sqlite3.connect("rjp.db")
+	con.row_factory = sqlite3.Row
+	cur = con.cursor()
+	cur.execute("SELECT * FROM entries WHERE username = ?", [username])
+	rows = cur.fetchall();
+	return render_template("list.html",rows = rows)
 
 
 
