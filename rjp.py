@@ -18,6 +18,11 @@ import sqlite3
 connection = sqlite3.connect("rjp.db")
 cursor = connection.cursor()
 
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
 # end sqlite setup
 
 #<Write Setup
@@ -70,11 +75,22 @@ def displayjournal():
 	username=session.get('user') 
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
-	selection = cursor.execute('SELECT entrydate, entry from entries WHERE username = ?', [username])
-	for row in selection:
-		entrydate = (row[0])
-		entry = (row[1])
-	return render_template('displayjournal.html', entrydate=entrydate, entry=entry)
+	rows = cursor.execute('SELECT * from entries WHERE username = ?', [username]).fetchall()
+#	for row in selection:
+#		entrydate = (row[0])
+#		entry = (row[1])
+	return render_template('displayjournal.html', rows=rows)
+
+@app.route('/list')
+def list():
+   con = sqlite3.connect("rjp.db")
+   con.row_factory = sqlite3.Row
+  
+   cur = con.cursor()
+   cur.execute("SELECT * FROM entries")
+  
+   rows = cur.fetchall();
+   return render_template("list.html",rows = rows)
 
 
 
