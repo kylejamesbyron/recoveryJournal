@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # setup sqlite
 import sqlite3
-connection = sqlite3.connect("girls.db")
+connection = sqlite3.connect("rjp.db")
 cursor = connection.cursor()
 
 # end sqlite setup
@@ -20,19 +20,32 @@ cursor = connection.cursor()
 #<Write Setup
 
 # Login page
-@app.route('/login')
+@app.route('/')
 def login():
 	return render_template('login.html')
 # login.html takes input (username, password)
 
-@app.route('/login/check')
-	def logincheck():
-#		load database
-#		pull variables for username and password
-#		if username and password = correct
-#			redirect to '/sobercheck'
-#		else:
-#			redirect to '/login/check/wrong'
+@app.route('/login/check', methods=['POST'])
+def logincheck():
+	username = request.form['username']
+	password = request.form['password']
+	import sqlite3
+	connection = sqlite3.connect("rjp.db")
+	cursor = connection.cursor()
+	selection = cursor.execute("SELECT password from users WHERE username = ?", [username])
+	for row in selection:
+		passw = (row[0])
+	if password == passw:
+		return render_template('/home.html')
+	else:
+		return "Failure"
+
+# New Entry
+@app.route('/newentry')
+def newentry():
+	return render_template('newentry.html')
+
+
 # end Login
 
 #Main Page
