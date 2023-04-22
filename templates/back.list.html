@@ -1,11 +1,7 @@
-
-
-{% extends 'base.html' %}
-
-{% block content %}
-   
-    
-      <a href = "/home/">Go back to home page</a><br><br>
+<!doctype html>
+<html>
+   <body>
+      <a href = "/home/">Go back to home page</a><br>
         
          {% for row in rows %}
             
@@ -15,9 +11,9 @@
                <br>
             
             
-{% endfor %}
+         {% endfor %}
       
      
       <a href = "/home/">Go back to home page</a>
-{% endblock %}
-        
+   </body>
+</html>        

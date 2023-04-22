@@ -1,10 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>The Recovery Journal</title></head><body>Welcome to The Recovery Journal<br>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <br>
-<a href="http://127.0.0.1:5000/newentry">1.&nbsp; New Entry</a><br>
+<h3>
+<a href="http://127.0.0.1:5000/newentry">1.&nbsp; New Entry</a><br><br>
 <a href="http://127.0.0.1:5000/list">2.&nbsp; Read Journal</a><br>
-<a href="http://127.0.0.1:5000/exit">3.&nbsp; Exit</a><br>
+</h3>
 
-
-</body></html>
+{% endblock %}

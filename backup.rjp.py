@@ -14,16 +14,14 @@ app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
 # End of opening
 
 # setup sqlite
-import sqlite3
-connection = sqlite3.connect("rjp.db")
-cursor = connection.cursor()
+def sqliteconnect():
+	import sqlite3
+	connection = sqlite3.connect("rjp.db")
+	cursor = connection.cursor()
+
 # end sqlite setup
 
 #<Write Setup
-#home
-@app.route('/home/')
-def home():
-	return render_template('home.html')
 
 # Login page
 @app.route('/')
@@ -39,12 +37,11 @@ def logincheck():
 	import sqlite3
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
-	selection = cursor.execute("SELECT password from users WHERE username = ?", 
-		[username])
+	selection = cursor.execute("SELECT password from users WHERE username = ?", [username])
 	for row in selection:
 		passw = (row[0])
 	if password == passw:
-		return render_template('home.html')
+		return render_template('/home.html')
 	else:
 		return "Failure"
 
@@ -58,13 +55,12 @@ def newentrysubmit():
 	#username = request.form['username']
 	username=session.get('user') 
 	entry = request.form['newentry']
-	entrydate = datetime.date.today()
+	entrydate = datetime.datetime.now()
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
-	cursor.execute("INSERT INTO entries (username, entry, entrydate) values (?, ?, ?)", 
-		(username, entry, entrydate))
+	cursor.execute("INSERT INTO entries (username, entry, entrydate) values (?, ?, ?)", (username, entry, entrydate))
 	connection.commit()
-	return render_template('home.html')
+	return render_template('/home.html')
 
 # end new entry
 
