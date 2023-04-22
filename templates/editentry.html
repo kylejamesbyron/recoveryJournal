@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+
+<p> </p>
+
+    {% for row in rows %}
+
+    <form action="/editentry/submit" method="post"> 
+        EDIT ENTRY: <br><textarea cols="50" rows="25" type="text" name="editentry"> {{row["entry"]}} 
+    </textarea>&nbsp;<br>
+    
+    <input name="form" value="Submit" type="submit"> </form>
+    {% endfor %}
+
+{% endblock %}

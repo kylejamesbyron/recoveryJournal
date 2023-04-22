@@ -88,8 +88,23 @@ def list():
 	rows = cur.fetchall();
 	return render_template("list.html",rows = rows)
 
+# Edit
+@app.route('/edit/')
+def edit():
+	username=session.get('user')
+	con = sqlite3.connect("rjp.db")
+	con.row_factory = sqlite3.Row
+	cur = con.cursor()
+	cur.execute("SELECT * FROM entries WHERE username = ?", [username])
+	rows = cur.fetchall();
+	#oldentry = "This text will be inserted."
+	return render_template('editentry.html', rows=rows)
 
 
+# Test
+@app.route('/test/')
+def test():
+	return render_template('test.html')
 
 
 
