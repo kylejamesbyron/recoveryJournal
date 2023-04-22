@@ -89,7 +89,7 @@ def list():
 	return render_template("list.html",rows = rows)
 
 # Edit
-@app.route('/edit/')
+@app.route('/edit/', methods=['POST'])
 def edit():
 	username=session.get('user')
 	con = sqlite3.connect("rjp.db")
@@ -99,6 +99,18 @@ def edit():
 	rows = cur.fetchall();
 	#oldentry = "This text will be inserted."
 	return render_template('editentry.html', rows=rows)
+
+@app.route('/edit/submit/', methods=['POST'])
+def editsubmit():
+	username=session.get('user')
+	entrynew = request.form['edit']
+	con = sqlite3.connect("rjp.db")
+	con.row_factory = sqlite3.Row
+	cur = con.cursor()
+	cur.execute("UPDATE entries SET entry = ? WHERE username = ? AND entrydate = ?", (entrynew, username, "2023-04-22"))
+	con.commit()
+	return render_template('home.html')
+
 
 
 # Test

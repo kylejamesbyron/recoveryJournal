@@ -11,8 +11,12 @@
             
                {{row["entrydate"]}}<br>
                {{row["entry"]}}<br>
+               <form action="/edit/" method="post"> 
+               <input name={{row["entrydate"]}} value="EDIT" type="submit"> </form>
+
                <br>
                <br>
+
             
             
 {% endfor %}
