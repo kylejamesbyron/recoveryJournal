@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+
+<p> </p>
+
+    
+    {{entrydate}}
+    <form action="/edit/submit/" method="POST"> 
+        EDIT ENTRY: <br><textarea cols="50" rows="25" type="text" name="edit"> {{entry}} 
+    </textarea>&nbsp;<br>
+    
+</form>
+
+
+{% endblock %}

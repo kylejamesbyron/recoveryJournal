@@ -58,7 +58,7 @@ def newentrysubmit():
 	#username = request.form['username']
 	username=session.get('user') 
 	entry = request.form['newentry']
-	entrydate = datetime.date.today()
+	entrydate = '[datetime.date.today()]' + 'datetime.time()'
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
 	cursor.execute("INSERT INTO entries (username, entry, entrydate) values (?, ?, ?)", 
@@ -104,10 +104,14 @@ def edit():
 def editsubmit():
 	username=session.get('user')
 	entrynew = request.form['edit']
+	#if request.form[form] == "Submit":
+	#	datentry = 
+	#dateentry = request.form['form']
+	entrydate = request.form['form']
 	con = sqlite3.connect("rjp.db")
 	con.row_factory = sqlite3.Row
 	cur = con.cursor()
-	cur.execute("UPDATE entries SET entry = ? WHERE username = ? AND entrydate = ?", (entrynew, username, "2023-04-22"))
+	cur.execute("UPDATE entries SET entry = ? WHERE username = ? AND entrydate = ?", (entrynew, username, entrydate))
 	con.commit()
 	return render_template('home.html')
 
