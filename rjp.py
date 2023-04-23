@@ -7,6 +7,9 @@ from flask import request
 import os
 from flask import session
 import datetime
+from datetime import datetime
+from datetime import date
+from datetime import time 
 
 
 app = Flask(__name__)
@@ -58,7 +61,7 @@ def newentrysubmit():
 	#username = request.form['username']
 	username=session.get('user') 
 	entry = request.form['newentry']
-	entrydate = '[datetime.date.today()]' + 'datetime.time()'
+	entrydate = date.today() 
 	connection = sqlite3.connect("rjp.db")
 	cursor = connection.cursor()
 	cursor.execute("INSERT INTO entries (username, entry, entrydate) values (?, ?, ?)", 
