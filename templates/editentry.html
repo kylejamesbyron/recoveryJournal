@@ -5,12 +5,12 @@
 <p> </p>
 
     {% for row in rows %}
-    <br>EDIT: <input name="form" value={{row['entrydate']}} type="submit"> </form><br>
-    <form action="/edit/submit/" method="POST"> 
-        <br><textarea cols="50" rows="25" type="text" name="edit"> {{row["entry"]}} 
+    {{row['entrydate']}}
+    <form action="/edit/submit/{{row['ID']}}" method="POST">
+    <textarea cols="50" rows="25" type="text" name="edit"> {{row["entry"]}} 
     </textarea>&nbsp;<br> 
-    
-</form>
+    <br><input name="form" value="SAVE" type="submit"><br><br>
+    </form>
     {% endfor %}
 
 {% endblock %}

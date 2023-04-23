@@ -73,14 +73,6 @@ def newentrysubmit():
 
 # Display Journal
 
-@app.route('/displayjournal')
-def displayjournal():
-	username=session.get('user') 
-	connection = sqlite3.connect("rjp.db")
-	cursor = connection.cursor()
-	rows = cursor.execute('SELECT * from entries WHERE username = ?', [username]).fetchall()
-	return render_template('displayjournal.html', rows=rows)
-
 @app.route('/list')
 def list():
 	username=session.get('user')
@@ -92,39 +84,42 @@ def list():
 	return render_template("list.html",rows = rows)
 
 # Edit
-@app.route('/edit/', methods=['POST'])
-def edit():
+@app.route('/edit/<userid>', methods=['POST'])
+def edit(userid):
 	username=session.get('user')
+	#userid = request.form['idedit']
+	userid = userid
 	con = sqlite3.connect("rjp.db")
 	con.row_factory = sqlite3.Row
 	cur = con.cursor()
-	cur.execute("SELECT * FROM entries WHERE username = ?", [username])
+	cur.execute("SELECT * FROM entries WHERE username = ? AND ID = ?", [username, userid])
 	rows = cur.fetchall();
 	#oldentry = "This text will be inserted."
 	return render_template('editentry.html', rows=rows)
 
-@app.route('/edit/submit/', methods=['POST'])
-def editsubmit():
+@app.route('/edit/submit/<userid>', methods=['POST'])
+def editsubmit(userid):
 	username=session.get('user')
 	entrynew = request.form['edit']
-	#if request.form[form] == "Submit":
-	#	datentry = 
-	#dateentry = request.form['form']
-	entrydate = request.form['form']
+	entryid = userid
+	#entryid = request.form['form']
 	con = sqlite3.connect("rjp.db")
 	con.row_factory = sqlite3.Row
 	cur = con.cursor()
-	cur.execute("UPDATE entries SET entry = ? WHERE username = ? AND entrydate = ?", (entrynew, username, entrydate))
+	cur.execute("UPDATE entries SET entry = ? WHERE username = ? AND ID = ?", (entrynew, username, entryid))
 	con.commit()
 	return render_template('home.html')
 
 
 
 # Test
-@app.route('/test/')
-def test():
-	return render_template('test.html')
 
+
+@app.route('/test/<userid>', methods=['POST'])
+def test(userid):
+	
+		return render_template('test.html', userid=userid)
+	
 
 
 
